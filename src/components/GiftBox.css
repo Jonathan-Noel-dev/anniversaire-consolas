@@ -1,0 +1,279 @@
+.gift-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 20px 120px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #30203d 0%, #100c1c 65%);
+  color: white;
+}
+
+.gift-heading {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.gift-heading > span {
+  color: #d5ad79;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+}
+
+.gift-heading h2 {
+  margin: 18px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 400;
+}
+
+.gift-heading h2 em {
+  color: #dba8cf;
+}
+
+.gift-heading p {
+  color: #b9aebe;
+  line-height: 1.8;
+}
+
+.gift-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.gift-box {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  transform-style: preserve-3d;
+  animation: giftFloat 3s ease-in-out infinite;
+}
+
+.gift-body {
+  position: absolute;
+  bottom: 0;
+  width: 190px;
+  height: 145px;
+  background: linear-gradient(135deg, #784b91, #452b60);
+  border: 1px solid #d5ad79;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.gift-ribbon {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 28px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #c99c61, #f4d9a0, #b88a50);
+}
+
+.gift-ribbon-horizontal {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 24px;
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, #e5c58c, #b88a50);
+}
+
+.gift-lid {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  left: -10px;
+  width: 210px;
+  height: 40px;
+  border: 1px solid #e8c68e;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #a875ae, #684477);
+  transform-origin: left bottom;
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gift-lid-ribbon {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #c99c61, #f4d9a0, #b88a50);
+}
+
+.gift-bow {
+  position: absolute;
+  left: 50%;
+  top: -25px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2px;
+}
+
+.gift-bow span {
+  display: block;
+  width: 30px;
+  height: 23px;
+  border: 5px solid #e6c28b;
+  border-radius: 50% 50% 0 50%;
+  transform: rotate(25deg);
+}
+
+.gift-bow span:last-child {
+  transform: scaleX(-1) rotate(25deg);
+}
+
+.gift-light {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  width: 150px;
+  height: 160px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 225, 160, 0.9),
+    rgba(219, 168, 207, 0.2) 45%,
+    transparent 75%
+  );
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+}
+
+.gift-glow {
+  position: absolute;
+  width: 280px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(198, 145, 207, 0.12);
+  filter: blur(50px);
+  transition: background 1s ease;
+}
+
+.gift-shadow {
+  position: absolute;
+  bottom: 30px;
+  width: 180px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  filter: blur(12px);
+}
+
+.gift-container.opened .gift-lid {
+  transform: translate(-25px, -100px) rotate(-30deg);
+}
+
+.gift-container.opened .gift-light {
+  opacity: 1;
+}
+
+.gift-container.opened .gift-glow {
+  background: rgba(225, 183, 122, 0.3);
+}
+
+.gift-container.opened .gift-box {
+  animation: giftCelebrate 0.7s ease;
+}
+
+.gift-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 30px;
+  margin-top: 15px;
+  border: 1px solid #d5ad79;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #a77bd1, #71468c);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(167, 123, 209, 0.2);
+}
+
+.gift-message {
+  max-width: 520px;
+  margin: 25px auto 0;
+  padding: 30px;
+  border: 1px solid rgba(213, 173, 121, 0.4);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+}
+
+.gift-message-icon {
+  color: #d5ad79;
+  margin-bottom: 12px;
+}
+
+.gift-message h3 {
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #e8c9df;
+}
+
+.gift-message p {
+  color: #c2b6c8;
+  line-height: 1.9;
+  margin: 15px 0;
+}
+
+.gift-message > span {
+  color: #d5ad79;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+@keyframes giftFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes giftCelebrate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 550px) {
+  .gift-section {
+    padding: 75px 18px 90px;
+  }
+
+  .gift-container {
+    height: 270px;
+  }
+
+  .gift-message {
+    padding: 24px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gift-box {
+    animation: none;
+  }
+
+  .gift-lid,
+  .gift-light,
+  .gift-glow {
+    transition-duration: 0.01ms;
+  }
+}

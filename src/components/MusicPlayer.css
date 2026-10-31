@@ -1,0 +1,62 @@
+.music-player {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 16px;
+  border: 1px solid rgba(225, 199, 149, 0.3);
+  border-radius: 50px;
+
+  background: rgba(25, 18, 38, 0.85);
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.music-button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #c9aa70, #e1c795);
+  color: #21172b;
+
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.music-button:hover {
+  transform: scale(1.1);
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e1c795;
+}
+
+.music-controls input {
+  width: 75px;
+  accent-color: #c9aa70;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .music-player {
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 12px;
+  }
+}
